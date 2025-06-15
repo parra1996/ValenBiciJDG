@@ -34,13 +34,13 @@ public class ValenbiciAPI {
                 System.out.println("Respuesta de la API:");
                 System.out.println(result);
 
-                // Intentamos procesar la respuesta como JSON
+               
                 try {
                     JSONObject jsonObject = new JSONObject(result);
                     JSONArray resultsArray = jsonObject.getJSONArray("results");
-                    //  Recorre el vector resultsArray mostrando los datos solicitados.
+                 
 
-                    // Recorrer todas las estaciones
+                   
                     for (int i = 0; i < resultsArray.length(); i++) {
                         JSONObject estacion = resultsArray.getJSONObject(i);
                         String address = estacion.getString("address");
@@ -54,7 +54,7 @@ public class ValenbiciAPI {
                     }
 
                 } catch (org.json.JSONException e) {
-                    // Si la respuesta no es un array JSON, imprimimos el mensaje de error
+                    
                     System.err.println("Error al procesar los datos JSON: " + e.getMessage());
                 }
             }
